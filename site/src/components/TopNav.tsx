@@ -48,7 +48,7 @@ export const TopNav: FC<PropsWithChildren<Props>> = ({
       <div css={leftLayoutCss}>
         {hasHomeLink ? (
           <Link data-button href="/">
-            <Icon path={mdiArrowLeft} />
+            <Icon path={mdiArrowLeft} size={1} />
           </Link>
         ) : (
           <div css={logoCss}>

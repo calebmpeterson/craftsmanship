@@ -21,12 +21,16 @@ const codeCss = (inline: boolean) => [
 
 const FRAME_COLOR = colors.slate[300];
 
+const OFFSET = -GAP / 2;
+
 const frameCss = css`
   position: absolute;
+  width: 100%;
+  height: 100%;
 
   .vertical {
     position: absolute;
-    height: 100px;
+    height: calc(100% + ${GAP * 2}px);
   }
 
   .horizontal {
@@ -35,12 +39,10 @@ const frameCss = css`
   }
 `;
 
-const OFFSET = -GAP / 2;
-
 const frameBeforeCss = css`
   ${frameCss}
-  top: -${GAP / 2}px;
-  left: -${GAP / 2}px;
+  top: -${GAP}px;
+  left: -${GAP}px;
 
   .vertical {
     top: ${OFFSET}px;
@@ -55,17 +57,19 @@ const frameBeforeCss = css`
 
 const frameAfterCss = css`
   ${frameCss}
-  bottom: -${GAP / 2}px;
-  right: -${GAP / 2}px;
+  bottom: -${GAP}px;
+  right: -${GAP}px;
 
   .vertical {
     bottom: ${OFFSET}px;
-    border-left: 1px solid ${FRAME_COLOR};
+    right: 0;
+    border-right: 1px solid ${FRAME_COLOR};
   }
 
   .horizontal {
+    bottom: 0;
     right: ${OFFSET}px;
-    border-top: 1px solid ${FRAME_COLOR};
+    border-bottom: 1px solid ${FRAME_COLOR};
   }
 `;
 

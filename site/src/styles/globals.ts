@@ -208,12 +208,10 @@ export const globalCss = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 36px;
-    min-height: 36px;
     box-sizing: border-box;
 
-    padding: 5px 10px;
-    border: 1px solid ${colors.slate[800]};
+    padding: 0px;
+    border: 1px solid transparent;
     border-radius: 5px;
     color: ${colors.slate[600]};
     background-color: transparent;
@@ -241,7 +239,7 @@ export const globalCss = css`
     &:hover,
     &:focus {
       svg {
-        transform: scale(1.5);
+        transform: scale(1.25);
       }
     }
   }
