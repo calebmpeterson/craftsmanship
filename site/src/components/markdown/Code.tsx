@@ -6,10 +6,14 @@ import { FC, PropsWithChildren } from "react";
 
 interface Props {
   inline: boolean;
+  className?: string;
 }
 
-const codeCss = (inline: boolean) => [
-  css``,
+const codeCss = (inline: boolean, avoid?: boolean) => [
+  css`
+    --border-color: ${avoid ? colors.red[200] : colors.slate[300]};
+    color: ${avoid ? colors.red[800] : colors.sky[800]};
+  `,
   inline
     ? css``
     : css`
@@ -19,7 +23,7 @@ const codeCss = (inline: boolean) => [
       `,
 ];
 
-const FRAME_COLOR = colors.slate[300];
+const FRAME_COLOR = "var(--border-color)";
 
 const OFFSET = -GAP;
 
@@ -35,7 +39,7 @@ const frameCss = css`
 
   .horizontal {
     position: absolute;
-    width: 100px;
+    width: 33%;
   }
 `;
 
@@ -73,8 +77,12 @@ const frameAfterCss = css`
   }
 `;
 
-export const Code: FC<PropsWithChildren<Props>> = ({ inline, children }) => (
-  <code css={codeCss(inline)}>
+export const Code: FC<PropsWithChildren<Props>> = ({
+  inline,
+  className,
+  children,
+}) => (
+  <code css={codeCss(inline, className?.endsWith(".avoid"))}>
     {!inline && (
       <div css={frameBeforeCss}>
         <div className="vertical" />

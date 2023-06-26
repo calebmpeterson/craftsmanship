@@ -111,10 +111,10 @@ export const globalCss = css`
 
     &:hover {
       &:before {
-        border-left-color: ${colors.orange[700]};
+        border-left-color: ${colors.sky[700]};
       }
       &:after {
-        border-bottom-color: ${colors.orange[700]};
+        border-bottom-color: ${colors.sky[700]};
         width: calc(100% + 100px);
       }
     }
@@ -212,7 +212,7 @@ export const globalCss = css`
 
     &:hover,
     &:focus {
-      color: ${colors.orange[800]};
+      color: ${colors.sky[800]};
     }
 
     > strong {
@@ -240,12 +240,12 @@ export const globalCss = css`
     transition: ${transition("color", "background-color")};
 
     &:hover {
-      color: ${colors.orange[800]};
+      color: ${colors.sky[800]};
     }
 
     &:focus {
       outline: none;
-      color: ${colors.orange[800]};
+      color: ${colors.sky[800]};
     }
 
     svg {
