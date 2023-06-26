@@ -6,7 +6,7 @@ Following consistent naming conventions, like using a formatting standard, allow
 
 Furthermore, consistent naming conventions can allow the reader to quickly distinguish and then ignore non-relevant parts of the code.
 
-What the convention is matters _far less_ than consistent adherence.
+> What the convention is matters _far less_ than consistent adherence.
 
 **Example**
 
