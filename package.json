@@ -1,0 +1,16 @@
+{
+  "name": "good-practice-guidelines",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:calebmpeterson/good-practice-guidelines.git",
+  "author": "caleb <caleb.peterson@cubicle6.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "site"
+  ],
+  "scripts": {
+    "dev": "yarn workspace site dev",
+    "build": "yarn workspace site build"
+  }
+}
