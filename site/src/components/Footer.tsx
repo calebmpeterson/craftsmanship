@@ -5,6 +5,7 @@ import { mdiArrowLeft, mdiRulerSquare } from "@mdi/js";
 import colors from "../styles/colors";
 import Link from "next/link";
 import { Layout } from "./Layout";
+import { GAP } from "@/styles/constants";
 
 interface Props {
   title?: string;
@@ -18,7 +19,7 @@ const containerCss = css`
   justify-content: space-between;
   box-sizing: border-box;
   background-color: ${colors.slate[100]};
-  padding: 10px;
+  padding: 10px ${GAP}px;
   border-top: 1px solid ${colors.slate[300]};
   font-size: 12px;
   color: ${colors.slate[600]};

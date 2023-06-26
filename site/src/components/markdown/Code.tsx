@@ -21,7 +21,7 @@ const codeCss = (inline: boolean) => [
 
 const FRAME_COLOR = colors.slate[300];
 
-const OFFSET = -GAP / 2;
+const OFFSET = -GAP;
 
 const frameCss = css`
   position: absolute;

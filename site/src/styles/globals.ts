@@ -82,9 +82,13 @@ export const globalCss = css`
   }
 
   li {
-    position: relative;
     padding: 0;
     list-style: none;
+  }
+
+  li > a {
+    position: relative;
+    padding: 5px;
 
     &:before {
       content: "";
@@ -92,6 +96,7 @@ export const globalCss = css`
       height: calc(100% + 10px);
       border-left: 1px solid ${colors.slate[300]};
       left: -5px;
+      transition: ${transition("border-color")};
     }
 
     &:after {
@@ -101,6 +106,17 @@ export const globalCss = css`
       border-bottom: 1px solid ${colors.slate[300]};
       left: -15px;
       bottom: 0;
+      transition: ${transition("border-color", "width")};
+    }
+
+    &:hover {
+      &:before {
+        border-left-color: ${colors.orange[700]};
+      }
+      &:after {
+        border-bottom-color: ${colors.orange[700]};
+        width: calc(100% + 100px);
+      }
     }
   }
 
@@ -194,8 +210,9 @@ export const globalCss = css`
 
     transition: ${transition("color")};
 
-    &:hover {
-      color: ${colors.sky[700]};
+    &:hover,
+    &:focus {
+      color: ${colors.orange[800]};
     }
 
     > strong {
@@ -223,24 +240,17 @@ export const globalCss = css`
     transition: ${transition("color", "background-color")};
 
     &:hover {
-      color: ${colors.slate[800]};
+      color: ${colors.orange[800]};
     }
 
     &:focus {
       outline: none;
-      color: ${colors.slate[800]};
+      color: ${colors.orange[800]};
     }
 
     svg {
       fill: currentColor;
       transition: ${transition("transform")};
-    }
-
-    &:hover,
-    &:focus {
-      svg {
-        transform: scale(1.25);
-      }
     }
   }
 

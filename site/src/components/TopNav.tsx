@@ -1,10 +1,11 @@
 import { css } from "@emotion/react";
-import { FC, PropsWithChildren } from "react";
+import { FC, Fragment, PropsWithChildren } from "react";
 import Icon from "@mdi/react";
-import { mdiArrowLeft, mdiRulerSquare } from "@mdi/js";
+import { mdiArrowLeft, mdiMathCompass, mdiRulerSquare } from "@mdi/js";
 import colors from "../styles/colors";
 import Link from "next/link";
 import { Layout } from "./Layout";
+import { GAP } from "@/styles/constants";
 
 interface Props {
   title?: string;
@@ -18,7 +19,7 @@ const containerCss = css`
   justify-content: space-between;
   box-sizing: border-box;
   background-color: ${colors.slate[100]};
-  padding: 10px;
+  padding: 10px ${GAP}px;
   border-bottom: 1px solid ${colors.slate[300]};
 `;
 
@@ -46,24 +47,22 @@ export const TopNav: FC<PropsWithChildren<Props>> = ({
   return (
     <div css={containerCss}>
       <div css={leftLayoutCss}>
-        {hasHomeLink ? (
-          <Link data-button href="/">
-            <Icon path={mdiArrowLeft} size={1} />
-          </Link>
-        ) : (
-          <div css={logoCss}>
-            <Icon
-              path={mdiRulerSquare}
-              size={1}
-              rotate={-45}
-              color={colors.slate[700]}
-            />
-          </div>
+        {hasHomeLink && (
+          <Fragment>
+            <Link data-button href="/">
+              <Icon path={mdiArrowLeft} size={1} />
+            </Link>
+
+            <div>Guidelines</div>
+          </Fragment>
         )}
-        <div>Guidelines</div>
       </div>
       <div>
-        <strong>{title}</strong>
+        {title ? (
+          <strong>{title}</strong>
+        ) : (
+          <Icon path={mdiMathCompass} size={1} color="currentColor" />
+        )}
       </div>
       <div css={rightLayoutCss}>{children}</div>
     </div>

@@ -19,6 +19,7 @@ const layoutCss = css`
 
     background-image: radial-gradient(${colors.slate[300]} 1px, transparent 0);
     background-size: ${GAP}px ${GAP}px;
+    background-position: center center;
 
     > * {
       max-width: 900px;
