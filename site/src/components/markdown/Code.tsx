@@ -1,15 +1,14 @@
 import colors from "@/styles/colors";
 import { GAP } from "@/styles/constants";
-import { withAlpha } from "@/styles/utils";
 import { css } from "@emotion/react";
-import { FC, PropsWithChildren } from "react";
+import { CodeComponent } from "react-markdown/lib/ast-to-react";
 
 interface Props {
   inline: boolean;
   className?: string;
 }
 
-const codeCss = (inline: boolean, avoid?: boolean) => [
+const codeCss = (inline: boolean | undefined, avoid?: boolean) => [
   css`
     --border-color: ${avoid ? colors.red[200] : colors.slate[300]};
     color: ${avoid ? colors.red[800] : colors.sky[800]};
@@ -77,11 +76,7 @@ const frameAfterCss = css`
   }
 `;
 
-export const Code: FC<PropsWithChildren<Props>> = ({
-  inline,
-  className,
-  children,
-}) => (
+export const Code: CodeComponent = ({ inline, className, children }) => (
   <code css={codeCss(inline, className?.endsWith(".avoid"))}>
     {!inline && (
       <div css={frameBeforeCss}>

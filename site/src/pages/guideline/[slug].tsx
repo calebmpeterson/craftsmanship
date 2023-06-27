@@ -1,22 +1,18 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import graymatter from "gray-matter";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { getGuidelinesRoot } from "@/utils/getGuidelinesRoot";
-import Link from "next/link";
 import { isArray } from "lodash";
 import ReactMarkdown from "react-markdown";
 import { TopNav } from "@/components/TopNav";
 import { getTitleFromSlug } from "@/utils/getTitleFromSlug";
 import { Layout } from "@/components/Layout";
-import { css } from "@emotion/react";
 import { components } from "@/components/markdown";
 import { useEffect } from "react";
 import { Footer } from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { getGuidelinesSlugs } from "@/utils/getGuidelinesSlugs";
 
 interface Props {
   slug: string;
@@ -24,16 +20,16 @@ interface Props {
   data: Record<string, unknown>;
 }
 
-const debugCss = css`
-  max-width: 100%;
-  overflow: auto;
-  font-size: 12px;
-`;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const slugs = await getGuidelinesSlugs();
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({
-  params,
-  res,
-}) => {
+  return {
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   if (!params?.slug) {
     throw new Error(`Route is missing [slug]`);
   }
@@ -55,7 +51,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 };
 
 export default function Guideline(
-  props: InferGetServerSidePropsType<typeof getServerSideProps>
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   useEffect(() => {
     console.log(props);
