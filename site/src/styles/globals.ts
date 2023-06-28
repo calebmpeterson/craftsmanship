@@ -36,6 +36,8 @@ export const globalCss = css`
     background-color: ${colors.slate[100]};
     color: ${colors.slate[700]};
 
+    overflow: hidden;
+
     /* Set the color of the scrollbar track */
     &::-webkit-scrollbar-track {
       background-color: transparent;

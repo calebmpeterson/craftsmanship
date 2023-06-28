@@ -2,6 +2,7 @@ import colors from "@/styles/colors";
 import { GAP } from "@/styles/constants";
 import { css } from "@emotion/react";
 import { FC, PropsWithChildren } from "react";
+import { motion } from "framer-motion";
 
 const layoutCss = css`
   display: flex;
@@ -30,5 +31,13 @@ const layoutCss = css`
 `;
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => (
-  <div css={layoutCss}>{children}</div>
+  <motion.div
+    css={layoutCss}
+    initial={{ opacity: 0, scale: 1.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.5 }}
+    transition={{ ease: "easeInOut", duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
 );
