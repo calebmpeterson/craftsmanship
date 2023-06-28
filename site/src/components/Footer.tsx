@@ -48,7 +48,9 @@ export const Footer: FC<PropsWithChildren<Props>> = ({
   return (
     <div css={containerCss}>
       <div css={leftLayoutCss}>
-        <div>&copy; Copyright Caleb Peterson</div>
+        <div>
+          Created by <a href="https://cubicle6.com/">Caleb Peterson</a>
+        </div>
       </div>
       <div>{children}</div>
       <div css={rightLayoutCss}>Soli Deo Gloria</div>
