@@ -6,8 +6,7 @@ try {
 } catch (error: unknown) {
   if (isExpectedError(error)) {
     // Handle the expected error
-  }
-  else {
+  } else {
     // Handle the unexpected error
   }
 }
@@ -15,7 +14,7 @@ try {
 
 Instead of:
 
-```typescript
+```typescript.avoid
 try {
   // Some code that might throw
 } catch (error: unknown) {

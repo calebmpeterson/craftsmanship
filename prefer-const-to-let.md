@@ -6,7 +6,7 @@ const myValue = isConditionTrue ? maybeValue : undefined;
 
 Instead of:
 
-```js
+```js.avoid
 let myValue;
 if (isConditionTrue) {
   myValue = maybeValue;

@@ -19,7 +19,7 @@ const buttonCss = css`
 `;
 ```
 
-If the occasion should arise where an element-specific style needs to be used, then appending a `Style` suffix like so:
+If the occasion should arise where an element-specific style needs to be used, then append a `Style` suffix:
 
 ```js
 // If numerous degree values will be used, this is faster

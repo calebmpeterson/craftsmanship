@@ -13,10 +13,10 @@ if (isComplexCondition) {
 
 Instead of:
 
-```js
+```js.avoid
 // It's much harder to determine what
 // the domain-specific intent is when
-// conditional is inlined like this.
+// a conditional is inlined like this.
 if (isThis || (isThat && isAnother)) {
   // Handle the scenario
 }
