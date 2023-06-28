@@ -254,6 +254,12 @@ export const globalCss = css`
     }
   }
 
+  button > svg,
+  a > svg {
+    min-width: 14px;
+    min-height: 14px;
+  }
+
   [data-button-group] {
     display: flex;
     align-items: center;
