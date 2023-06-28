@@ -1,5 +1,3 @@
-Prefer consistency
-
 **Rationale**
 
 Following consistent naming conventions, like using a formatting standard, allows the reader to focus on the logic rather than attempting to determine why a naming convention might not have been followed.
