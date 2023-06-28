@@ -6,7 +6,8 @@ Instead of:
 type Result = {
   // Did the operation succeed?
   success: boolean;
-  // If not, include a user-facing explanation of the problem
+  // If not, include a user-facing
+  // explanation of the problem.
   explanation?: string;
 }
 
@@ -20,12 +21,14 @@ Prefer:
 ```ts
 type SuccessResult = {
   success: true;
-  // There is no explanation needed. The type-checker will flag any mistaken attempt to provide one.
+  // There is no explanation needed. The type-checker
+  // will flag any mistaken attempt to provide one.
 };
 
 type FailureResult = {
   success: false;
-  // An explanation is required. The type-checker will flag any mistaken omissions.
+  // An explanation is required. The type-checker
+  // will flag any mistaken omissions.
   explanation: string;
 };
 
