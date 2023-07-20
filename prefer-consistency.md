@@ -1,12 +1,12 @@
 **Rationale**
 
-Following consistent naming conventions, like using a formatting standard, allows the reader to focus on the logic rather than attempting to determine why a naming convention might not have been followed.
+Following consistent conventions - naming, stylistic, or otherwise - like using a formatting standard, allows the reader to focus on the logic rather than attempting to determine why a naming convention might not have been followed.
 
-Furthermore, consistent naming conventions can allow the reader to quickly distinguish and then ignore non-relevant parts of the code.
+Furthermore, consistent conventions can allow the reader to quickly distinguish and then ignore non-relevant parts of the code.
 
 > What the convention is matters _far less_ than consistent adherence.
 
-**Example**
+**Example 1**
 
 When using a CSS-in-JS library, always add a suffix such as `Css` to CSS rule declarations like this:
 
