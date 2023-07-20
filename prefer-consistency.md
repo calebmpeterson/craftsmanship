@@ -1,10 +1,14 @@
 **Rationale**
 
-Following consistent conventions - naming, stylistic, or otherwise - like using a formatting standard, allows the reader to focus on the logic rather than attempting to determine why a naming convention might not have been followed.
+Following consistent conventions - naming, stylistic, or otherwise - like using a formatting standard, allows the reader to focus on the logic rather than attempting to determine why a convention might not have been followed.
 
 Furthermore, consistent conventions can allow the reader to quickly distinguish and then ignore non-relevant parts of the code.
 
 > What the convention is matters _far less_ than consistent adherence.
+
+**Principle**
+
+Differences draws the reader's attention - take advantage of that fact and guide the reader by avoiding differences when additional attention from the reader isn't warranted.
 
 **Example 1**
 
