@@ -5,7 +5,7 @@ if (condition) {
   return "something else";
 }
 
-return "a thing"
+return "a thing";
 ```
 
 Instead of:
@@ -22,4 +22,4 @@ return myValue;
 
 **Rationale**
 
-This improves maintainability because the reader never need ask/answer the question "under what circumstances might `myValue` be re-assigned to a different value?"
+This improves maintainability because it reduces the moving parts, and thus cognitive overhead; the reader never need ask/answer the question "under what circumstances might `myValue` be re-assigned to a different value?"
